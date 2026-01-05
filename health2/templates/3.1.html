@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Session | Talk To Professional</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='3.css') }}">
+</head>
+<body>
+
+    <header>
+        <div class="hero-text">
+            <h1>Start Your Journey</h1>
+            <p>Please fill out the details below to confirm your appointment.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="appointment-section">
+            <div style="margin-bottom: 20px;">
+                <a href="3.html" style="text-decoration: none; color: #6e8efb; font-weight: bold;">← Back to Therapists</a>
+            </div>
+
+            <form action="#" method="POST">
+                <div class="input-group">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <select required>
+                        <option value="" disabled selected>Choose Your Therapist</option>
+                        <option>Dr. Sarah Jenkins</option>
+                        <option>Dr. Aman Verma</option>
+                        <option>Dr. Elena Rodriguez</option>
+                    </select>
+                    <input type="date" required>
+                </div>
+                <textarea rows="4" placeholder="How are you feeling today?" required></textarea>
+                <button type="submit" class="btn submit-btn">Confirm Appointment</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Talk To Professional. Healing hearts, one conversation at a time.</p>
+    </footer>
+
+</body>
+</html>

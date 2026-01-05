@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Glow Up Kit | Proud Librarian</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Spicy+Rice&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='2.css') }}">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <div class="sticker-container">
+                <img src="{{ url_for('static', filename='librarian-sticker.png') }}" alt="Proud Librarian" class="main-sticker">
+            </div>
+            <h1>Mental Glow Up Kit</h1>
+            <p>Your guide to understanding mental wellness</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section class="info-card">
+            <h2 class="title-purple">🦋 What is Mental Health?</h2>
+            <p>Mental health includes our emotional, psychological, and social well-being. It is the foundation of how we think, feel, and behave. Just like we go to the gym for our bodies, we need a <strong>Mental Glow Up</strong> for our minds.</p>
+        </section>
+
+        <section class="info-card">
+            <div class="sticker-right">
+                <img src="{{ url_for('static', filename='reading-sticker.png') }}" alt="Reading is Mental Health" class="small-sticker">
+            </div>
+            <h2 class="title-blue">📖 Why is it Important?</h2>
+            <ul class="check-list">
+                <li><strong>Better Focus:</strong> Helps you study and read more effectively.</li>
+                <li><strong>Stress Control:</strong> Teaches you how to handle life's "glitches."</li>
+                <li><strong>Self-Love:</strong> Build a positive relationship with yourself.</li>
+            </ul>
+        </section>
+
+        <section class="info-card">
+            <h2 class="title-silver">⚠️ Common Mental Health Issues</h2>
+            <div class="issue-grid">
+                <div class="issue-item">
+                    <h3>Anxiety</h3>
+                    <p>Feeling nervous or worried about the future.</p>
+                </div>
+                <div class="issue-item">
+                    <h3>Burnout</h3>
+                    <p>Total exhaustion from working or studying too hard.</p>
+                </div>
+                <div class="issue-item">
+                    <h3>Depression</h3>
+                    <p>Feeling very sad or low for a long period of time.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Stay Bright, Stay Mindful 💜</p>
+    </footer>
+
+</body>
+</html>

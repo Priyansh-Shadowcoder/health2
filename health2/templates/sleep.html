@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Wind-Down - Health Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --night-blue: #2c3e50;
+            --moon-light: #f1c40f;
+            --star-white: #ecf0f1;
+            --primary-blue: #0d4873;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            background-color: #1a1a2e;
+            /* Deep night background */
+            font-family: 'Segoe UI', sans-serif;
+            color: var(--star-white);
+        }
+
+        .main-header {
+            background-color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .main-header h1 {
+            font-family: Trajan, serif;
+            margin: 0;
+            color: var(--primary-blue);
+            letter-spacing: 2px;
+        }
+
+        .content-wrapper {
+            flex: 1 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .sleep-card {
+            max-width: 600px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .pmr-visualizer {
+            width: 150px;
+            height: 150px;
+            margin: 20px auto;
+            border: 4px solid var(--moon-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.5s ease;
+        }
+
+        .tense {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px var(--moon-light);
+            background: rgba(241, 196, 15, 0.2);
+        }
+
+        .relax {
+            transform: scale(1);
+            box-shadow: none;
+            background: transparent;
+        }
+
+        .procedure-box {
+            text-align: left;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+            border-left: 4px solid var(--moon-light);
+        }
+
+        .main-footer {
+            background-color: #ffffff;
+            padding: 40px 0 20px 0;
+            color: #2d3436;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="main-header">
+        <h1>SLEEP WELL</h1>
+    </header>
+
+    <main class="content-wrapper">
+        <div class="sleep-card">
+            <i class="fas fa-moon fa-3x mb-3" style="color: var(--moon-light);"></i>
+            <h2>Nighttime Relaxation</h2>
+            <p class="text-muted">Prepare your body for restorative sleep.</p>
+
+            <div id="pmr-circle" class="pmr-visualizer">Ready</div>
+
+            <h4 id="instruction">Click to start relaxation</h4>
+            <p id="timer" class="small text-muted">00:00</p>
+
+            <button id="startBtn" class="btn btn-outline-warning rounded-pill px-5 mt-3">Start Wind-Down</button>
+
+            <div class="procedure-box">
+                <h5><i class="fas fa-bed"></i> Procedure & Benefits</h5>
+                <ul class="small mb-0">
+                    <li><strong>Procedure:</strong> We will cycle through muscle groups. Tense the muscle as hard as you
+                        can for 5 seconds, then release instantly.</li>
+                    <li><strong>Benefits:</strong> Lowers physical stress, slows heart rate, and signals the brain that
+                        it is time to sleep.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>About MINDSET ARCHITECTURE</h5>
+                    <p class="small text-muted">Empowering individuals to take control of their health through
+                        technology.</p>
+                </div>
+                <div class="col-md-4 mb-4 text-center">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-muted small">Privacy Policy</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted small">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4 text-md-end">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#" class="text-primary me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-info me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-danger"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center text-muted small mb-0">&copy; 2026 Your Personal MINDSET ARCHITECTURE. All rights
+                reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const circle = document.getElementById('pmr-circle');
+        const instruction = document.getElementById('instruction');
+        const timerText = document.getElementById('timer');
+        const startBtn = document.getElementById('startBtn');
+
+        const routine = [
+            { area: "Feet & Toes", action: "Curl your toes tightly" },
+            { area: "Legs & Calves", action: "Tense your leg muscles" },
+            { area: "Hands & Arms", action: "Make a tight fist" },
+            { area: "Shoulders", action: "Hunch them to your ears" },
+            { area: "Face", action: "Squeeze your eyes and mouth" }
+        ];
+
+        let isRunning = false;
+
+        async function wait(sec) {
+            for (let i = sec; i > 0; i--) {
+                if (!isRunning) break;
+                timerText.innerText = `00:0${i}`;
+                await new Promise(r => setTimeout(r, 1000));
+            }
+        }
+
+        async function startRoutine() {
+            isRunning = true;
+            startBtn.disabled = true;
+
+            for (let item of routine) {
+                // Tense Phase
+                circle.innerText = "TENSE";
+                circle.className = "pmr-visualizer tense";
+                instruction.innerHTML = `<strong>${item.area}:</strong> ${item.action}`;
+                await wait(5);
+
+                // Relax Phase
+                circle.innerText = "RELAX";
+                circle.className = "pmr-visualizer relax";
+                instruction.innerText = "Now release all tension and feel the heaviness.";
+                await wait(5);
+            }
+
+            circle.innerText = "Done";
+            instruction.innerText = "Your body is now ready for sleep.";
+            startBtn.disabled = false;
+            startBtn.innerText = "Restart";
+        }
+
+        startBtn.addEventListener('click', startRoutine);
+    </script>
+</body>
+
+</html>

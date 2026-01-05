@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talk To Professional | Therapy & Healing</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='3.css') }}">
+</head>
+<body>
+
+    <div class="sticker s1">🌈</div>
+    <div class="sticker s2">✨</div>
+    <div class="sticker s3">🧠</div>
+    <div class="sticker s4">💜</div>
+    <div class="sticker s5">☁️</div>
+
+    <header>
+        <div class="hero-text">
+            <h1>Talk To Professional</h1>
+            <p>Expert therapists at your fingertips. Safe. Confidential. Supportive.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="therapist-grid">
+            <div class="card">
+                <img src="{{ url_for('static', filename='Dr.Sarah.png') }}" alt="Dr. Sarah">
+                <h3>Dr. Sarah Jenkins</h3>
+                <span class="tag">Anxiety Expert</span>
+                <p>Helping you navigate through life's toughest storms with proven CBT techniques.</p>
+                <a href="/schedule" class="btn">Book Session</a>
+            </div>
+
+            <div class="card">
+                <img src="{{ url_for('static', filename='Dr.Aman.png') }}" alt="Dr. Aman">
+                <h3>Dr. Aman Verma</h3>
+                <span class="tag">Relationships</span>
+                <p>Focusing on harmony and work-life balance through empathetic listening.</p>
+                <a href="/schedule" class="btn">Book Session</a>
+            </div>
+
+            <div class="card">
+                <img src="{{ url_for('static', filename='Dr.Elena.png') }}" alt="Dr. Elena">
+                <h3>Dr. Elena Rodriguez</h3>
+                <span class="tag">Teen Specialist</span>
+                <p>Dedicated to helping the younger generation find their voice and confidence.</p>
+                <a href="/schedule" class="btn">Book Session</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Talk To Professional. Healing hearts, one conversation at a time.</p>
+    </footer>
+
+</body>
+</html>
+
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Space | Mental Health Support</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='4.css') }}">
+</head>
+<body>
+
+    <div class="stars-container"></div>
+
+    <header>
+        <h1>You are safe now.</h1>
+        <p>Take a deep breath. We are here with you.</p>
+    </header>
+
+    <main>
+        <section class="breathing-space">
+            <div class="breathing-circle"></div>
+            <p class="instruction">Follow the silver circle: Breathe In... Breathe Out...</p>
+        </section>
+
+        <section class="card-container">
+            <div class="card">
+                <img src="{{ url_for('static', filename='Cloud.png') }}" alt="Cloud Sticker" class="sticker">
+                <h3>Rain Sounds</h3>
+                <audio controls>
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="card">
+                <img src="{{ url_for('static', filename='star.png') }}" alt="Star Sticker" class="sticker">
+                <h3>Night Ambience</h3>
+                <audio controls>
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </section>
+
+        <section class="distraction-zone">
+            <h2>Focus on this:</h2>
+            <div class="reveal-box">
+                <p class="hidden-text">Name 5 things you can see around you right now.</p>
+                <span class="hover-prompt">Hover to reveal a distraction task</span>
+            </div>
+        </section>
+
+        <section class="emergency">
+            <h2>Need to talk to a human?</h2>
+            <div class="contact-grid">
+                <a href="tel:988" class="btn">Call 988 (Suicide & Crisis)</a>
+                <a href="#" class="btn silver">Text HOME to 741741</a>
+            </div>
+        </section>
+    </main>
+    
+</body>
+</html>
